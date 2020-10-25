@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Course implements Serializable {
 
-    private String coursenamwe;         //private - priklauso tik sitai klasei, is kitu - nematys
+    private String coursename;         //private - priklauso tik sitai klasei, is kitu - nematys
     private int numberOfEnrolledUsers;
     private ArrayList<CourseFile> courseFiles;
     private ArrayList<Folder> courseFolders;
@@ -16,14 +16,14 @@ public class Course implements Serializable {
     private LocalDate courseCreated;
 
     /*
-        defaultinis konstruktorius - alt insert - select none
+        //defaultinis konstruktorius - alt insert - select none
+            public Course() {
+    }
     */
 
-    public Course() {
-    }
 
     /*
-        pirminis reiksiu priskyrimas vykdomas naudojant konstruktoriu
+        pirminis reiksmiu priskyrimas vykdomas naudojant konstruktoriu
         t.y. konstruktorius kurimo metu priskirs uzprogramuotas reiksmes
     */
     public Course(String coursenamwe,
@@ -34,7 +34,7 @@ public class Course implements Serializable {
                   LocalDate courseStart,
                   LocalDate courseEnd,
                   LocalDate courseCreated) {
-        this.coursenamwe = coursenamwe;
+        this.coursename = coursenamwe;
         this.numberOfEnrolledUsers = numberOfEnrolledUsers;
         this.courseFiles = courseFiles;
         this.courseFolders = courseFolders;
@@ -100,11 +100,25 @@ public class Course implements Serializable {
         this.courseCreated = courseCreated;
     }
 
-    public String getCoursenamwe() {
-        return coursenamwe;
+    public String getCoursename() {
+        return coursename;
     }
 
-    public void setCoursenamwe(String coursenamwe) {
-        this.coursenamwe = coursenamwe;
+    public void setCoursename(String coursenamwe) {
+        this.coursename = coursenamwe;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "coursename='" + coursename + '\'' +
+                ", numberOfEnrolledUsers=" + numberOfEnrolledUsers +
+                ", courseFiles=" + courseFiles +
+                ", courseFolders=" + courseFolders +
+                ", courseModerators=" + courseModerators +
+                ", courseStart=" + courseStart +
+                ", courseEnd=" + courseEnd +
+                ", courseCreated=" + courseCreated +
+                '}';
     }
 }
