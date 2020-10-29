@@ -11,7 +11,7 @@ public class User implements Serializable {
     String psw;
     int year;
     ArrayList<Course> myEnrolledCourses;
-    boolean isdModerator = false;
+    boolean isModerator = false;
     ArrayList<Course> myAdministratedCourses;
     String bankAccount;
 
@@ -21,7 +21,7 @@ public class User implements Serializable {
                 String psw,
                 int year,
                 ArrayList<Course> myEnrolledCourses,
-                boolean isdModerator,
+                boolean isModerator,
                 ArrayList<Course> myAdministratedCourses,
                 String bankAccount) {
         this.name = name;
@@ -30,7 +30,7 @@ public class User implements Serializable {
         this.psw = psw;
         this.year = year;
         this.myEnrolledCourses = myEnrolledCourses;
-        this.isdModerator = isdModerator;
+        this.isModerator = isModerator;
         this.myAdministratedCourses = myAdministratedCourses;
         this.bankAccount = bankAccount;
     }
@@ -84,11 +84,11 @@ public class User implements Serializable {
     }
 
     public boolean isIsdModerator() {
-        return isdModerator;
+        return isModerator;
     }
 
     public void setIsdModerator(boolean isdModerator) {
-        this.isdModerator = isdModerator;
+        this.isModerator = isdModerator;
     }
 
     public ArrayList<Course> getMyAdministratedCourses() {

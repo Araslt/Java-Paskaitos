@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Course implements Serializable {
 
-    private String coursename;         //private - priklauso tik sitai klasei, is kitu - nematys
+    private static String courseName;         //private - priklauso tik sitai klasei, is kitu - nematys
     private int numberOfEnrolledUsers;
     private ArrayList<CourseFile> courseFiles;
     private ArrayList<Folder> courseFolders;
@@ -26,7 +26,7 @@ public class Course implements Serializable {
         pirminis reiksmiu priskyrimas vykdomas naudojant konstruktoriu
         t.y. konstruktorius kurimo metu priskirs uzprogramuotas reiksmes
     */
-    public Course(String coursenamwe,
+    public Course(String courseName,
                   int numberOfEnrolledUsers,
                   ArrayList<CourseFile> courseFiles,
                   ArrayList<Folder> courseFolders,
@@ -34,7 +34,7 @@ public class Course implements Serializable {
                   LocalDate courseStart,
                   LocalDate courseEnd,
                   LocalDate courseCreated) {
-        this.coursename = coursenamwe;
+        this.courseName = courseName;
         this.numberOfEnrolledUsers = numberOfEnrolledUsers;
         this.courseFiles = courseFiles;
         this.courseFolders = courseFolders;
@@ -100,18 +100,18 @@ public class Course implements Serializable {
         this.courseCreated = courseCreated;
     }
 
-    public String getCoursename() {
-        return coursename;
+    public  String getCourseName() {
+        return courseName;
     }
 
-    public void setCoursename(String coursenamwe) {
-        this.coursename = coursenamwe;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "coursename='" + coursename + '\'' +
+                "coursename='" + courseName + '\'' +
                 ", numberOfEnrolledUsers=" + numberOfEnrolledUsers +
                 ", courseFiles=" + courseFiles +
                 ", courseFolders=" + courseFolders +

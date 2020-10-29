@@ -10,10 +10,8 @@ public class CourseIS implements Serializable {
     private String sysName;
     private LocalDate dateCreated;
 
-/*
     public CourseIS() {
     }
-*/
 
     public CourseIS(ArrayList<Course> allCourses, ArrayList<User> allUsers, String sysName, LocalDate dateCreated) {
         this.allCourses = allCourses;

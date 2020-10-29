@@ -1,5 +1,6 @@
 import model.*;
 import utils.CourseManagement;
+import utils.FileIO;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,10 +9,13 @@ import java.util.Scanner;
 public class Start {
     public static void main(String[] args) {
 
-        CourseIS courseIS = new CourseIS
-                (new ArrayList<Course>(), new ArrayList<User>(), "Newer Moodle", LocalDate.now());
+        //CourseIS courseIS = new CourseIS(new ArrayList<Course>(), new ArrayList<User>(), "Newer Moodle", LocalDate.now());
 
-        User loggedUser = new User("Admin", "Ädminas", "admin", "root", 1965,
+        //uzkraunam info is failo
+        CourseIS courseIS = new CourseIS();
+        courseIS = FileIO.ReadCourseFromFile(courseIS);
+
+        User loggedUser = new User("Admin", "Adminas", "admin", "root", 1965,
                 new ArrayList<Course>(), true, new ArrayList<Course>(), "");
         Scanner scanner = new Scanner(System.in);
         String cmd = "";
@@ -21,8 +25,8 @@ public class Start {
                     "\t course - manage courses\n" +
                     "\t user - manage users\n" +
                     "\t quit - exit system");
-            cmd = scanner.next();
 
+            cmd = scanner.next();
             switch (cmd) {
                 case "course":
                     CourseManagement.manageCoureses(scanner, courseIS, loggedUser);
@@ -39,19 +43,13 @@ public class Start {
         }
 
 
-    }           //      2 ---------------------------------------
+    }//-- 2
 
     private static void manageUsers(Scanner scanner, CourseIS courseIS) {
     }
 
-    private static void manageCourseFiles(Scanner scanner, CourseIS courseIS) {
-    }
 
-    private static void manageCourseFolders(Scanner scanner, CourseIS courseIS) {
-    }
-
-
-}           //      1 ---------------------------------------
+}//-- 1
 
 
 
