@@ -4,11 +4,10 @@ import model.CourseIS;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class FileIO {
 
-    public static CourseIS ReadCourseFromFile(CourseIS courseIS) {
+    public static CourseIS ReadCourseFromDBFile(CourseIS courseIS) {
 
         try {
             FileInputStream fis = new FileInputStream("db.bin");
@@ -23,7 +22,7 @@ public class FileIO {
         return courseIS;
     }
 
-    public static void WriteCourseToFile(CourseIS courseIS) {
+    public static void WriteCourseToDBFile(CourseIS courseIS) {
 
         File failiukas = new File("db.bin");
 

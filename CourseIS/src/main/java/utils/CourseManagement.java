@@ -101,6 +101,8 @@ public class CourseManagement {
         String kursoPavadinimas = scanner.next();
 
         Course course = getCourseByName(courseIS.getAllCourses(), kursoPavadinimas);
+        ArrayList<User> users = new ArrayList<User>();
+        users.add(user);
         if (course != null) {
             courseIS.getAllCourses().remove(course);}
             else

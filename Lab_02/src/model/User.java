@@ -45,6 +45,10 @@ public class User implements Serializable {
         this.login = login;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,7 +119,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "Musu didenybe " + name + " " + surName + " {" + login + "}";
+        return "Musu didenybe " + name + " " + surName + " {" + login + "}" + " {" + psw + "}" + " {" + year + "}";
     }
 
     public static void manageUsers(Scanner scanner, CourseIS courseIS, User user) {
@@ -131,7 +135,7 @@ public class User implements Serializable {
             userCmd = scanner.next();
             switch (userCmd) {
                 case "add":
-                    //addUser(scanner, courseIS, user);
+                    addUser(scanner, courseIS, user);
                     break;
                 case "update":
                     //updateUser()
@@ -140,7 +144,9 @@ public class User implements Serializable {
                     //deleteUser()
                     break;
                 case "print":
-                    courseIS.getAllCourses().forEach(course -> System.out.println(course.toString()));
+                    for (User user1 : courseIS.getAllUsers()) {
+                        System.out.println(user1.toString());
+                    }
                     break;
                 case "back":
                     System.out.println("going up \n");
@@ -151,11 +157,15 @@ public class User implements Serializable {
         }
     }
 
+    public static User getUserByName(ArrayList<User> userName, String vartotojoVardas) {
+        return userName.stream().filter(user -> user.getName().equals(vartotojoVardas)).findFirst().orElseGet(null);
+    }
     public static void addUser(Scanner scanner, CourseIS courseIS, User user) {
         System.out.println("Enter user info: {name};{surname};{login};{psw};{year}");
         String[] values = scanner.next().split(";");
 
-        System.out.println("\n Pridetas useris: " + values[0] + "   Pradzia: " + values[1] + "   Pabaiga: " + values[2] + " \n");
+        System.out.println("\n Pridetas useris: " + values[0] + "    " + values[1] + "    " + values[2] +
+                "    " + values[3] + "    " + values[4] + " \n");
         courseIS.getAllUsers().add(new User(values[0],
                 values[1],
                 values[2],
@@ -165,5 +175,6 @@ public class User implements Serializable {
                 true,
                 new ArrayList<Course>(), "0"));
     }
+
 
 }
