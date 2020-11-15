@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 import static model.CourseFile.manageCourseFile;
+import static model.Folder.manageCourseFolders;
 import static utils.FileIO.*;
 
 public class Course implements Serializable {
@@ -19,17 +20,6 @@ public class Course implements Serializable {
     private LocalDate courseStart;
     private LocalDate courseEnd;
     private LocalDate courseCreated;
-
-/*    public Course(String courseName,
-                  int i,
-                  ArrayList<CourseFile> courseFiles,
-                  ArrayList<Folder> folders,
-                  ArrayList<User> users,
-                  LocalDate now,
-                  LocalDate localDate,
-                  LocalDate date) {
-        this.courseName = courseName;
-    }*/
 
     public Course(String courseName,
                   int numberOfEnrolledUsers,
@@ -155,9 +145,9 @@ public class Course implements Serializable {
                     "\t add - add a course to system \n" +
                     "\t upd - update a course \n" +
                     "\t del - remove the course \n" +
-                    "\t enroll - enroll the course \n" +
+                    //"\t enroll - enroll the course \n" +
                     "\t print - print all courses \n" +
-                    "\t printf - print all courses from DB file \n" +
+                    //"\t printf - print all courses from DB file \n" +
                     "\t folder - manage the folders \n" +
                     "\t file - manage course files \n" +
                     "\t back - return to main menu \n");
@@ -173,21 +163,17 @@ public class Course implements Serializable {
                 case "del":
                     deleteCourse(scanner, courseIS);
                     break;
-                case "enroll":
-                    //surasti pagal pavadinima kursa ir ji prideti i pasirinktu sarasa
-                    break;
+//                case "enroll":
+//                    //surasti pagal pavadinima kursa ir ji prideti i pasirinktu sarasa
+//                    break;
                 case "print":
-                    for (Course course : courseIS.getAllCourses()) {
-                        System.out.println(course.toString());
-                    }
-                    //courseIS.getAllCourses().forEach(course -> System.out.println(course.toString()));
+                    courseIS.getAllCourses().forEach(course -> System.out.println(course.toString()));
                     break;
-                case "printf":
-                    ReadCourseFromDBFile(courseIS);
-                    break;
+//                case "printf":
+//                    ReadCourseFromDBFile(courseIS);
+//                    break;
                 case "folder":
-                    //persokti i folder menu pagal nurodyta kursa
-                    //manageCourseFolders();
+                    manageCourseFolders(scanner, courseIS, user);
                     break;
                 case "file":
                     manageCourseFile(scanner, courseIS, user);
@@ -203,10 +189,6 @@ public class Course implements Serializable {
 
     public static Course getCourseByName(ArrayList<Course> allCourses, String kursoPavadinimas) {
         return allCourses.stream().filter(course -> course.getCourseName().equals(kursoPavadinimas)).findFirst().orElseGet(null);
-    }
-
-    private static boolean courseExists(ArrayList<Course> courses, String kursoPavadinimas) {
-        return courses.stream().anyMatch(course -> course.getCourseName().equals(kursoPavadinimas));
     }
 
     private static void addCourse(Scanner scanner, CourseIS courseIS, User user) {

@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,9 +16,6 @@ public class User implements Serializable {
     boolean isModerator = false;
     ArrayList<Course> myAdministratedCourses;
     String bankAccount;
-
-    public User() {
-    }
 
     public User(String name,
                 String surName,
@@ -127,21 +125,21 @@ public class User implements Serializable {
         while (!userCmd.equals("back")) {
             System.out.println("main/user/  \n" +
                     "\t add - add user \n" +
-                    "\t update - update user \n" +
-                    "\t delete - delete user \n" +
+                    "\t upd - update user \n" +
+                    "\t del - delete user \n" +
                     "\t print - print users \n" +
                     "\t back - return to main menu \n");
 
             userCmd = scanner.next();
             switch (userCmd) {
                 case "add":
-                    addUser(scanner, courseIS, user);
+                    addUser(scanner, courseIS);
                     break;
-                case "update":
-                    //updateUser()
+                case "upd":
+                    updateUser(scanner, courseIS);
                     break;
-                case "delete":
-                    //deleteUser()
+                case "del":
+                    deleteUser(scanner, courseIS);
                     break;
                 case "print":
                     for (User user1 : courseIS.getAllUsers()) {
@@ -160,7 +158,8 @@ public class User implements Serializable {
     public static User getUserByName(ArrayList<User> userName, String vartotojoVardas) {
         return userName.stream().filter(user -> user.getName().equals(vartotojoVardas)).findFirst().orElseGet(null);
     }
-    public static void addUser(Scanner scanner, CourseIS courseIS, User user) {
+
+    public static void addUser(Scanner scanner, CourseIS courseIS) {
         System.out.println("Enter user info: {name};{surname};{login};{psw};{year}");
         String[] values = scanner.next().split(";");
 
@@ -176,5 +175,46 @@ public class User implements Serializable {
                 new ArrayList<Course>(), "0"));
     }
 
+    public static void updateUser(Scanner scanner, CourseIS courseIS) {
+        System.out.println("Iveskite userio varda");
+        String updatinamasUseris = scanner.next();
+
+        User user = getUserByName(courseIS.getAllUsers(), updatinamasUseris);
+
+        if (user != null) {
+            System.out.println("Update {name};{surname};{login};{psw};{year} ;-; - jei nekeiciam");
+            String[] values = scanner.next().split(";");
+
+            if (!values[0].equals("-")) {
+                user.setName(values[0]);
+            }
+            if (!values[1].equals("-")) {
+                user.setSurName(values[1]);
+            }
+            if (!values[2].equals("-")) {
+                user.setLogin(values[2]);
+            }
+            if (!values[3].equals("-")) {
+                user.setPsw(values[3]);
+            }
+            if (!values[4].equals("-")) {
+                user.setYear(Integer.parseInt(values[4]));
+            }
+        }
+    }
+
+    private static void deleteUser(Scanner scanner, CourseIS courseIS) {
+        System.out.println("Iveskite norimo istrinti userio varda");
+        String trinamasUseris = scanner.next();
+
+        User user = getUserByName(courseIS.getAllUsers(), trinamasUseris);
+
+        if (user != null) {
+            courseIS.getAllUsers().remove(user);
+            System.out.println("useris " + user.getName() + " istrintas \n");
+        } else {
+            System.out.println("Useris Neissitrina \n");
+        }
+    }
 
 }
