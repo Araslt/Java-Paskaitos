@@ -1,5 +1,5 @@
 /**
- * @mi mince
+ * @mi mosaica
  */
 
 public class ScannerException extends Exception {

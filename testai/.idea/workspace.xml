@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="716bb2fe-b65c-4051-978b-9ede95709050" name="Default Changelist" comment="" />
+    <list default="true" id="716bb2fe-b65c-4051-978b-9ede95709050" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Lab_02/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_02/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScannerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScannerException.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,14 +58,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Generics2">
+  <component name="RunManager" selected="Application.Exception1">
     <configuration name="Exception1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Exception1" />
       <module name="testai" />
@@ -132,6 +135,8 @@
       <workItem from="1603561300036" duration="18922000" />
       <workItem from="1603732124767" duration="3717000" />
       <workItem from="1603785017803" duration="8794000" />
+      <workItem from="1605428653883" duration="581000" />
+      <workItem from="1605429279896" duration="13000" />
     </task>
     <servers />
   </component>
@@ -158,11 +163,15 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1603548024814" />
-    <state x="655" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603735988485">
+    <state x="414" y="240" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605429195463">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="414" y="240" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1170@0.0.1920.1170" timestamp="1605429195463" />
+    <state x="655" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605429056579">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="524" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1603618612610" />
-    <state x="655" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1170@0.0.1920.1170" timestamp="1603735988485" />
+    <state x="655" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1170@0.0.1920.1170" timestamp="1605429056579" />
     <state x="718" y="142" key="#com.intellij.ide.util.MemberChooser" timestamp="1603913069426">
       <screen x="0" y="0" width="1920" height="1170" />
     </state>
@@ -196,6 +205,10 @@
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603624955682" />
     <state width="1877" height="323" key="GridCell.Tab.0.right/0.0.1920.1170@0.0.1920.1170" timestamp="1603918011064" />
+    <state x="540" y="328" key="IDE.errors.dialog" timestamp="1605429026568">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="540" y="328" key="IDE.errors.dialog/0.0.1920.1170@0.0.1920.1170" timestamp="1605429026568" />
     <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1603616927912">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

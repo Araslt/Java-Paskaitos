@@ -33,7 +33,7 @@ public class FileIO {
             oos.close();
 
         } catch (IOException e) {
-            System.out.println("Kazkas ce nepaviko!\n");
+            System.out.println("Kazkas ce niapaviko!\n");
         }
     }
 
